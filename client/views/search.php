@@ -70,7 +70,7 @@
             <div class="main col-md-6">
                 <div class="search">
                     <h4>Tìm kiếm</h4>
-                    <form action="<?php echo HEADERLINK."Home/Search" ?>" method="POST" enctype="multipart/form-data"class="formSearch" id="formSearch">
+                    <form data-action="<?php echo HEADERLINK."Home/Search" ?>" method="POST" class="formSearch" id="formSearch">
                         <!-- <div class="left_form"> -->
                             <label for="search">Từ khóa</label>
                             <input type="text" name="keySearch" id="searchKey"><br>
@@ -86,7 +86,7 @@
                         <!-- </div> -->
                         <!-- <div class="right_form"> -->
                             <!-- <input type="submit"  value="Tìm kiếm"> -->
-                            <button style="margin-left: 50px;" id="submit_form_search">Tìm kiếm</button>
+                            <button type="submit" style="margin-left: 50px;" id="submit_form_search">Tìm kiếm</button>
                             <!-- </div> -->
                     </form>
 
@@ -98,28 +98,12 @@
                             <i class="fas fa-angle-double-right"></i>
                             <p>BÀI HÁT</p>
                         </div>
-                        <ul>
-                            <?php 
-                            if(!empty($data['result_song'])){
-                                foreach($data['result_song'] as $song){
-                                    ?>
-                                    <li class="item_result">
-                                        <div class="item_result_left">
-                                        <p class="title_song">1. <a href="">Tựa của bài hát 1 - Ca sĩ trình bày (320)</a></p>
-                                        <p class="title_category">Tên thể loại: <span>4:25</span></p>
-                                        </div>
-                                        <div class="item_result_right"><i class="fas fa-play"></i></div>
-                                    </li>
-                                    <?php 
-                                }
-                            }
-                            ?>
+                        <ul id="song_result">
+                            
                         </ul>
                         <div class="pagging_song">
-                            <ul style="display: flex; justify-content: center;">
-                                <li style="padding: 10px;"><a href="">1</a></li>
-                                <li style="padding: 10px;"><a href="">2</a></li>
-                                <li style="padding: 10px;"><a href="">3</a></li>
+                            <ul id = "pagging_song_result" style="display: flex; justify-content: center;">
+                                
                             </ul>
                         </div>
                     </div>

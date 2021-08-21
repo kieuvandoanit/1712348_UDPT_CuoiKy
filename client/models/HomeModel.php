@@ -45,7 +45,7 @@ class HomeModel extends DB{
             $sql = "SELECT * FROM  `artist` WHERE artist.Name LIKE '%".$keySearch."'";
         }
         if($searchType === "song"){
-            $sql = "SELECT * FROM  `song` join title ON song.TitleID = title.TitleID WHERE title.Title LIKE '%".$keySearch."'";
+            $sql = "SELECT * FROM  `song` join title ON song.TitleID = title.TitleID join `artist` ON artist.ArtistID = song.ArtistID join `genre` ON genre.GenreID = title.GenreID WHERE title.Title LIKE '%".$keySearch."'";
         }
         if($searchType === "album"){
             $sql = "SELECT * FROM  `album` WHERE album.Title LIKE '%".$keySearch."'";

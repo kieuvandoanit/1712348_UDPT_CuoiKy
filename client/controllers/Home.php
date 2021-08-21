@@ -27,6 +27,7 @@ class Home extends Controller{
 
     public function Search(){
         $keySearch = $_POST['keySearch'];
+        
         if(isset($_POST['singer'])){
             $data['result_singer'] = $this->homemodel->search($keySearch, "singer");
         }
@@ -36,10 +37,11 @@ class Home extends Controller{
         if(isset($_POST['song'])){
             $data['result_song'] = $this->homemodel->search($keySearch, "song");
         }
-        $data['category'] = $this->homemodel->getCategory();
-        $data['singerband'] = $this->homemodel->getTop20SingerBand();
-        $data['newalbum'] = $this->homemodel->getTop20NewAlbum();
-        $this->view("search",$data);
+        echo(json_encode($data));
+        // $data['category'] = $this->homemodel->getCategory();
+        // $data['singerband'] = $this->homemodel->getTop20SingerBand();
+        // $data['newalbum'] = $this->homemodel->getTop20NewAlbum();
+        // $this->view("search",$data);
     }
 }
 ?>
