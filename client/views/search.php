@@ -18,7 +18,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.tiny.cloud/1/wafynfll6yk0et81pwlvcwdx6r76d4pl4gy3397p9126dmzm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script src="public/js/main.js"></script>
+  <script src="client/public/js/main.js"></script>
 
 </head>
 <body>
@@ -75,11 +75,11 @@
                             <label for="search">Từ khóa</label>
                             <input type="text"><br>
 
-                            <input type="checkbox" name="" id="" value="">
+                            <input type="checkbox" name="" value="">
                             <label for="">Ca sĩ</label>
-                            <input type="checkbox" name="" id="" value="">
+                            <input type="checkbox" name="" value="">
                             <label for="">Album</label>
-                            <input type="checkbox" name="" id="" value="">
+                            <input type="checkbox" name="" value="">
                             <label for="">Bài hát</label>
                         </div>
                         <div class="right_form">
@@ -164,16 +164,17 @@
                 </div>
             </div>
             <div class="right_sidebar col-md-3">
+                <div class="is_login"></div>
                 <div class="login">
                     <div class="title_login">
                         ĐĂNG NHẬP
                     </div>
-                    <form action="" class="form_login">
-                        <label for="">Tên đăng nhập</label>
-                        <input type="text">
-                        <label for="">Mật khẩu</label>
-                        <input type="password">
-                        <input type="submit" value="Đăng nhập">
+                    <form data-action="<?php echo HEADERLINK.'Home/loginHandle' ?>" method="POST" class="form_login">
+                        <label for="username">Tên đăng nhập</label>
+                        <input type="text" id="username" name="username">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" id="password" name="password">
+                        <input type="submit" value="Đăng nhập" name="login">
                     </form>
                 </div>
                 <div class="new_album">

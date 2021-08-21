@@ -29,6 +29,16 @@ class HomeModel extends DB{
         }
         return $arr;
     }
+
+    public function loginHandle($username, $password){
+        $sql = "SELECT * FROM `user` WHERE `UserName` = '$username' AND `PassWord` = '$password'";
+        $arr = [];
+        $rows = mysqli_query($this->conn, $sql);
+        while($row = mysqli_fetch_assoc($rows)){
+            $arr[] = $row;
+        }
+        return $arr;
+    }
 }
 
 ?>
