@@ -1,0 +1,141 @@
+li{
+    list-style: none;;
+}
+.header{
+    width: 100%;
+    height: 100px;
+    border: 1px solid green;
+    text-align: center;
+    padding-top: 37px;
+    font-size:20px;
+    font-weight: 550;
+}
+.navbar{
+    padding-top: 10px;
+    border: 1px solid green;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+.navbar i{
+    float: left;
+    margin-left: 30px;
+}
+.navbar .menu{
+    float: right;
+    display: flex;
+    margin-right: 30px;
+}
+.navbar .menu li{
+    margin-left: 15px;
+}
+.icon_home {
+    color: red;
+    font-size: 23px;
+}
+.item_button{
+    background-color: #abdf12;
+    padding: 5px 15px;
+    border: 1px solid #abdf12;
+    border-radius: 5px;
+}
+.item_button a{
+    color: black;
+}
+
+.content{
+    display: flex;
+    border: 1px solid green;
+}
+.category{
+    border: 1px solid green;
+    margin-top: 15px;
+}
+.singer_band{
+    border: 1px solid green;
+    margin-top: 15px; 
+}
+.login{
+    padding: 5px;
+    border: 1px solid green;
+    margin-top: 15px;
+}
+.new_album{
+    border: 1px solid green;
+    margin-top: 15px;
+}
+.title{
+    background-color: #ace013;
+    padding: 8px 10px;
+    font-weight: 600;
+}
+.title_login{
+    background-color: #7d7364;
+    padding: 8px 10px;
+    font-weight: 600;
+}
+input{
+    margin-bottom: 5px;
+}
+.main{
+    border: 1px solid green;
+}
+.search{
+    border-bottom: 1px solid green;
+}
+.formSearch{
+    display: flex;
+}
+.right_form{
+    margin-left: 20px;
+}
+input[type="checkbox"]{
+    margin-left: 20px;
+}
+.icon_result{
+    display: flex;
+}
+.icon_result i{
+    margin-right: 5px;
+}
+h4{
+    font-weight: 600;
+}
+.icon_result p{
+    font-weight: 500;
+}
+.item_result{
+    
+    display: flex;
+    margin-bottom: 5px;
+}
+.item_result_left{
+    padding: 5px;
+    background-color: #c8c3ba;
+    width: 500px;
+}
+.item_result_right{
+    background-color: #c8c3ba;
+}
+.item_result_right>i{
+    padding: 28px 15px;
+    color: #6b9100;
+}
+.title_category{
+    float: right;
+}
+.date_release{
+    float: right;
+}
+.item_result_righta{
+    padding: 25px;
+    background-color: #f0ffc3;
+}
+.footer{
+    text-align: center;
+    padding-top: 30px;
+    font-weight: 600;
+    font-size: 25px;
+    width: 100%;
+    height: 100px;
+    border: 1px solid green;
+}

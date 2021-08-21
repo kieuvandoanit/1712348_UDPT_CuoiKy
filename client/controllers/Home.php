@@ -1,7 +1,7 @@
 <?php 
 class Home extends Controller{
     public function SayHi(){
-        echo "HEllo";
+        $this->view("search");
     }
 }
 
