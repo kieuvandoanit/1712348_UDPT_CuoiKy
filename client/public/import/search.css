@@ -83,7 +83,7 @@ input{
     border-bottom: 1px solid green;
 }
 .formSearch{
-    display: flex;
+    /* display: flex; */
 }
 .right_form{
     margin-left: 20px;

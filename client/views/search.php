@@ -70,22 +70,24 @@
             <div class="main col-md-6">
                 <div class="search">
                     <h4>Tìm kiếm</h4>
-                    <form action="" class="formSearch">
-                        <div class="left_form">
+                    <form action="<?php echo HEADERLINK."Home/Search" ?>" method="POST" enctype="multipart/form-data"class="formSearch" id="formSearch">
+                        <!-- <div class="left_form"> -->
                             <label for="search">Từ khóa</label>
-                            <input type="text"><br>
+                            <input type="text" name="keySearch" id="searchKey"><br>
 
-                            <input type="checkbox" name="" value="">
+                            <input type="checkbox" style="margin-left: 40px;" id="singer_search" class="searchType" name="singer" value="singer">
                             <label for="">Ca sĩ</label>
-                            <input type="checkbox" name="" value="">
+
+                            <input type="checkbox" style="margin-left: 15px;" id="album_search" class="searchType" name="album" value="album">
                             <label for="">Album</label>
-                            <input type="checkbox" name="" value="">
+
+                            <input type="checkbox" style="margin-left: 15px;" id="song_search" class="searchType" name="song" value="song">
                             <label for="">Bài hát</label>
-                        </div>
-                        <div class="right_form">
-                            <input type="submit" value="Tìm kiếm">
-                        </div>
-                        
+                        <!-- </div> -->
+                        <!-- <div class="right_form"> -->
+                            <!-- <input type="submit"  value="Tìm kiếm"> -->
+                            <button style="margin-left: 50px;" id="submit_form_search">Tìm kiếm</button>
+                            <!-- </div> -->
                     </form>
 
                 </div>
@@ -96,24 +98,30 @@
                             <i class="fas fa-angle-double-right"></i>
                             <p>BÀI HÁT</p>
                         </div>
-                        
-
                         <ul>
-                            <li class="item_result">
-                                <div class="item_result_left">
-                                    <p class="title_song">1. <a href="">Tựa của bài hát 1 - Ca sĩ trình bày (320)</a></p>
-                                    <p class="title_category">Tên thể loại: <span>4:25</span></p>
-                                </div>
-                                <div class="item_result_right"><i class="fas fa-play"></i></div>
-                            </li>
-                            <li class="item_result">
-                                <div class="item_result_left">
-                                    <p class="title_song">2. <a href="">Tựa của bài hát 1 - Ca sĩ trình bày (320)</a></p>
-                                    <p class="title_category">Tên thể loại: <span>4:25</span></p>
-                                </div>
-                                <div class="item_result_right"><i class="fas fa-play"></i></div>
-                            </li>
+                            <?php 
+                            if(!empty($data['result_song'])){
+                                foreach($data['result_song'] as $song){
+                                    ?>
+                                    <li class="item_result">
+                                        <div class="item_result_left">
+                                        <p class="title_song">1. <a href="">Tựa của bài hát 1 - Ca sĩ trình bày (320)</a></p>
+                                        <p class="title_category">Tên thể loại: <span>4:25</span></p>
+                                        </div>
+                                        <div class="item_result_right"><i class="fas fa-play"></i></div>
+                                    </li>
+                                    <?php 
+                                }
+                            }
+                            ?>
                         </ul>
+                        <div class="pagging_song">
+                            <ul style="display: flex; justify-content: center;">
+                                <li style="padding: 10px;"><a href="">1</a></li>
+                                <li style="padding: 10px;"><a href="">2</a></li>
+                                <li style="padding: 10px;"><a href="">3</a></li>
+                            </ul>
+                        </div>
                     </div>
                     
                     <div class="album_result">
@@ -123,20 +131,21 @@
                         </div>
                         
                         <ul>
-                            <li class="item_result">
-                                <div class="item_result_left">
-                                    <p>1. <a href="">Tên album 1 - (Số bài hát)</a></p>
-                                    <p class="date_release">Ngày phát hành: </p>
-                                </div>
-                                <div class="item_result_righta">Cover</i></div>
-                            </li>
-                            <li class="item_result">
-                                <div class="item_result_left">
-                                    <p>2. <a href="">Tên album 1 - (Số bài hát)</a></p>
-                                    <p class="date_release">Ngày phát hành: </p>
-                                </div>
-                                <div class="item_result_righta">Cover</i></div>
-                            </li>
+                            <?php 
+                            if(!empty($data['result_album'])){
+                                foreach($data['result_album'] as $album){
+                                    ?>
+                                    <li class="item_result">
+                                        <div class="item_result_left">
+                                            <p>1. <a href="">Tên album 1 - (Số bài hát)</a></p>
+                                            <p class="date_release">Ngày phát hành: </p>
+                                        </div>
+                                        <div class="item_result_righta">Cover</i></div>
+                                    </li>                       
+                                    <?php 
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                     
@@ -147,18 +156,20 @@
                         </div>
                         
                         <ul>
-                            <li class="item_result">
-                                <div class="item_result_left">
-                                    <p>1. <a href="">Ca sĩ 1</a></p>
-                                </div>
-                                <div class="item_result_righta">Image</i></div>
-                            </li>
-                            <li class="item_result">
-                                <div class="item_result_left">
-                                    <p>2. <a href="">Ca sĩ 2</a></p>
-                                </div>
-                                <div class="item_result_righta">Image</i></div>
-                            </li>
+                        <?php 
+                            if(!empty($data['result_singer'])){
+                                foreach($data['result_singer'] as $singer){
+                                    ?>
+                                    <li class="item_result">
+                                        <div class="item_result_left">
+                                            <p>1. <a href=""><?php echo $singer['Name']; ?></a></p>
+                                        </div>
+                                        <div class="item_result_righta">Image</i></div>
+                                    </li>                       
+                                    <?php 
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>

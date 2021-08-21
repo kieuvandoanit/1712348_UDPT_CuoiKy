@@ -39,6 +39,24 @@ class HomeModel extends DB{
         }
         return $arr;
     }
+
+    public function search($keySearch, $searchType){
+        if($searchType === "singer"){
+            $sql = "SELECT * FROM  `artist` WHERE artist.Name LIKE '%".$keySearch."'";
+        }
+        if($searchType === "song"){
+            $sql = "SELECT * FROM  `song` join title ON song.TitleID = title.TitleID WHERE title.Title LIKE '%".$keySearch."'";
+        }
+        if($searchType === "album"){
+            $sql = "SELECT * FROM  `album` WHERE album.Title LIKE '%".$keySearch."'";
+        }
+        $arr = [];
+        $rows = mysqli_query($this->conn, $sql);
+        while($row = mysqli_fetch_assoc($rows)){
+            $arr[] = $row;
+        }
+        return $arr;
+    }
 }
 
 ?>
