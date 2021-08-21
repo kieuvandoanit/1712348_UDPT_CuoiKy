@@ -42,24 +42,28 @@
                 <div class="category">
                     <div class="title">CÁC THỂ LOẠI</div>
                     <ul>
-                        <li><a href="">Thể loại 1</a></li>
-                        <li><a href="">Thể loại 2</a></li>
-                        <li><a href="">Thể loại 3</a></li>
+                        <?php 
+                        foreach($data['category'] as $category){
+                            ?>
+                            <li><a href=""><?php echo $category['GenreName']; ?></a></li>
+                            <?php 
+                        }
+                        ?>
+                        
+                        
                     </ul>
                 </div>
                 <div class="singer_band">
                     <div class="title">CÁC CA SĨ / NHÓM NHẠC</div>
                     <ul>
-                        <li><a href="">Ca sĩ 1</a></li>
-                        <li><a href="">Ca sĩ 2</a></li>
-                        <li><a href="">Ca sĩ 3</a></li>
-                        <li><a href="">Ca sĩ 4</a></li>
-                        <li><a href="">Ca sĩ 5</a></li>
-                        <li><a href="">Ca sĩ 6</a></li>
-                        <li><a href="">Ca sĩ 7</a></li>
-                        <li><a href="">Ca sĩ 8</a></li>
-                        <li><a href="">Ca sĩ 9</a></li>
-                        <li><a href="">Ca sĩ 10</a></li>
+                        <?php 
+                        foreach($data['singerband'] as $singerband){
+                            ?>
+                            <li><a href=""><?php echo $singerband['Name']; ?></a></li>
+                            <?php 
+                        }
+                        ?>
+                        
                     </ul>
                 </div>
             </div>
@@ -175,16 +179,14 @@
                 <div class="new_album">
                     <div class="title">ALBUM MỚI</div>
                     <ul>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
-                        <li><a href="">Album1</a></li>
+                        <?php 
+                        foreach($data['newalbum'] as $album){
+                            ?>
+                            <li><a href=""><?php echo $album['Title']; ?></a></li>
+                            <?php 
+                        }
+                        ?>
+                        
                     </ul>
                 </div>
             </div>

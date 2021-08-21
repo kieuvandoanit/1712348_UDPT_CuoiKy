@@ -4,7 +4,7 @@ class DB{
     protected $servername = "localhost";
     protected $username = "root";
     protected $password = "";
-    protected $dbname = "questionlibrary";
+    protected $dbname = "1712348_kieuvandoan";
     
     function __construct(){
         $this->conn = mysqli_connect($this->servername, $this->username, $this->password);
