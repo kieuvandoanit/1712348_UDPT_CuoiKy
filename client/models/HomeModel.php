@@ -42,13 +42,13 @@ class HomeModel extends DB{
 
     public function search($keySearch, $searchType){
         if($searchType === "singer"){
-            $sql = "SELECT * FROM  `artist` WHERE artist.Name LIKE '%".$keySearch."'";
+            $sql = "SELECT * FROM  `artist` WHERE artist.Name LIKE '%".$keySearch."%'";
         }
         if($searchType === "song"){
             $sql = "SELECT * FROM  `song` join title ON song.TitleID = title.TitleID join `artist` ON artist.ArtistID = song.ArtistID join `genre` ON genre.GenreID = title.GenreID WHERE title.Title LIKE '%".$keySearch."'";
         }
         if($searchType === "album"){
-            $sql = "SELECT * FROM  `album` WHERE album.Title LIKE '%".$keySearch."'";
+            $sql = "SELECT *, COUNT(SongID) as SL FROM  `album` LEFT JOIN album_details ON album.AlbumID = album_details.AlbumID WHERE album.Title LIKE '%".$keySearch."%' GROUP BY album_details.AlbumID";
         }
         $arr = [];
         $rows = mysqli_query($this->conn, $sql);

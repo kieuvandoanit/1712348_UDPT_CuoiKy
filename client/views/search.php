@@ -12,7 +12,9 @@
   <!-- <link rel="stylesheet" href="../../public/bootstrap/bootstrap-theme.min.css"> -->
   <link rel="stylesheet" href="client/public/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="client/public/font-awesome/css/all.css">
+  <!-- <link rel="stylesheet" href="client/public/font-awesome/css/all.css"> -->
+  <script src="https://kit.fontawesome.com/5cca95f2cf.js" crossorigin="anonymous"></script>
+
  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -114,23 +116,14 @@
                             <p>ALBUM</p>
                         </div>
                         
-                        <ul>
-                            <?php 
-                            if(!empty($data['result_album'])){
-                                foreach($data['result_album'] as $album){
-                                    ?>
-                                    <li class="item_result">
-                                        <div class="item_result_left">
-                                            <p>1. <a href="">Tên album 1 - (Số bài hát)</a></p>
-                                            <p class="date_release">Ngày phát hành: </p>
-                                        </div>
-                                        <div class="item_result_righta">Cover</i></div>
-                                    </li>                       
-                                    <?php 
-                                }
-                            }
-                            ?>
+                        <ul id="album_result">
+                            
                         </ul>
+                        <div class="pagging_album">
+                            <ul id = "pagging_album_result" style="display: flex; justify-content: center;">
+                                
+                            </ul>
+                        </div>
                     </div>
                     
                     <div class="singer_band_result">
@@ -139,21 +132,8 @@
                             <p>CA SĨ / NHÓM NHẠC</p>
                         </div>
                         
-                        <ul>
-                        <?php 
-                            if(!empty($data['result_singer'])){
-                                foreach($data['result_singer'] as $singer){
-                                    ?>
-                                    <li class="item_result">
-                                        <div class="item_result_left">
-                                            <p>1. <a href=""><?php echo $singer['Name']; ?></a></p>
-                                        </div>
-                                        <div class="item_result_righta">Image</i></div>
-                                    </li>                       
-                                    <?php 
-                                }
-                            }
-                            ?>
+                        <ul id="singer_result">
+                        
                         </ul>
                     </div>
                 </div>
