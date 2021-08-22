@@ -6,8 +6,6 @@ define('_BASELINK_','http://localhost:8080/1712348_KieuVanDoan/');
 define('HEADERLINK','');
 
 //HOST
-define('HOST','http://localhost:8080');
+define('HOST','http://localhost:8080/1712348_KieuVanDoan');
 
-//HOST API 
-define('HOSTAPI','localhost:3000');
 ?>
